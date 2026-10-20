@@ -2,7 +2,6 @@
 
 char[] alphabet = "AĂÂBCDEFGHIÎJKLMNOPQRSȘTȚUVWXYZ".ToCharArray();
 int alphabetLength = alphabet.Length;
-int userOption = 0;
 int userChoice = 0;
 string userInput = "";
 string key = "";
@@ -15,21 +14,17 @@ while (running)
 {
     string solution = "";
 
-    Console.WriteLine("Alegeți o opțiune:");
-    Console.WriteLine("1.Cifrul Viginere");
+    Console.WriteLine("Ce doriți să faceți?");
+    Console.WriteLine("1.Cifrare");
+    Console.WriteLine("2.Decifrare");
     Console.WriteLine("0.Ieșire");
-    userOption = InputHelpers.ValidatingUserOption();  //Validating user option//
+    userChoice = InputHelpers.ValidatingUserChoice();  // Validating user option//
 
-    if (userOption == 0)
+    if (userChoice == 0)
     {
         running = false;
         continue;
     }
-
-    Console.WriteLine("Ce doriți să faceți?");
-    Console.WriteLine("1.Cifrare");
-    Console.WriteLine("2.Decifrare");
-    userChoice = InputHelpers.ValidatingUserChoice();  // Validating user option//
 
     Console.WriteLine("Introduceți textul:");
     userInput = InputHelpers.ValidatingUserInput();    //Accepting user text//
@@ -41,7 +36,7 @@ while (running)
     char[] cutInput = userInput.ToCharArray();
     char[] cutKey = key.ToCharArray();
 
-    if (userChoice == 1) //Code block for decyphering
+    if (userChoice == 1) //Code block for cyphering
     {
         int inputLetterIndex = 0;
         int keyLetterIndex = 0;

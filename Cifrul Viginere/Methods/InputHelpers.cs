@@ -6,22 +6,12 @@ namespace Cifrul_Viginere.Methods
 {
     internal class InputHelpers
     {
-        public static int ValidatingUserOption() //metoda validează alegerea utilizatorului
-        {
-            int userChoice;
-            while (!int.TryParse(Console.ReadLine(), out userChoice) || userChoice != 1 && userChoice != 0)
-            {
-                Console.WriteLine("Alegeți fie 0 sau 1.");
-            }
-            return userChoice;
-        }
-
         public static int ValidatingUserChoice() //metoda validează alegerea utilizatorului
         {
             int userChoice;
-            while (!int.TryParse(Console.ReadLine(), out userChoice) || userChoice != 1 && userChoice != 2)
+            while (!int.TryParse(Console.ReadLine(), out userChoice) || userChoice != 1 && userChoice != 2 && userChoice != 0)
             {
-                Console.WriteLine("Alegeți fie 1 sau 2.");
+                Console.WriteLine("Alegeți fie 1, 2 sau 0.");
             }
             return userChoice;
         }
